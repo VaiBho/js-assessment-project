@@ -1,5 +1,6 @@
 .wrapper{
   border: 1px solid #ccc;
+  border-radius: 4px;
 }
 .tag{
   display: inline-block;
@@ -9,11 +10,32 @@
   background-color: #fcfcfc;
   margin: 2px;
 }
+.greeting-text{
+  font-size: 14px;
+  margin-right: 4px;
+}
+label{
+  font-weight: 600;
+  color: #333;
+}
+select{
+  border-radius: 4px;
+  font-size: .9em;
+  padding: 4px;
+  width: 100%;
+  margin: 4px 0 12px 0;
+}
+.hint{
+  display: block;
+  font-size: 12px;
+  color: #777;
+}
 .input{
   border: none;
   width: 100%;
-  padding: 4px;
+  padding: 6px;
   box-sizing: border-box;
+  border-radius: 4px;
 }
 .input:focus{
   outline: none;
