@@ -23,7 +23,10 @@ const getLanguageList =() => {
  */
 const translate = (target = 'en') => {
     return _HttpClient.post(`https://translation.googleapis.com/language/translate/v2?key=${apiKey}`, {
-        "source": "en",
+        /**
+         * if source is provided, willnot translate for source language
+         * e.g. source: 'en' then translation to english will return nothing
+         */
         "target": target,
         "q": [
          "Hello"

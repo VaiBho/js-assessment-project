@@ -37,7 +37,11 @@ class MultilineInput extends Component {
 
     handleKeyPress = event => {
         if (event.key === "Enter") {
-            //DISABLE INPUT UNTIL TRANSLATION
+            
+            //TEXT VALIDATION
+            if(!this.state.text) return;
+
+            //DISABLE INPUT UNTIL TRANSLATION COMPLETES
             this.setState({
                 processing: true
             });
@@ -56,7 +60,7 @@ class MultilineInput extends Component {
         //NEW TAG OBJECT
         const newTag = {
             greetingMessage: translatedText,
-            name: text
+            name:  text
         };
 
         //ADD NEW TAG TO LIST OF PREVIOUS TAGS
@@ -110,6 +114,7 @@ class MultilineInput extends Component {
                         onChange={this.handleChange("text")}
                         onKeyPress={this.handleKeyPress}
                         disabled={!selectedLang}
+                        placeholder="Enter name here"
                     />
                 </div>
             </div>
