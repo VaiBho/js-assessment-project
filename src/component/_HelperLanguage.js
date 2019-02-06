@@ -12,7 +12,7 @@ const getLanguageList =() => {
         return response.data.data.languages
       },
       (error => {
-          console.log(error);
+          //HANDLE ERROR
           return [];
       }))
 }
@@ -22,8 +22,6 @@ const getLanguageList =() => {
  * @param {string} target language in which text has to be translated
  */
 const translate = (target = 'en') => {
-    console.log(target);
-    
     return _HttpClient.post(`https://translation.googleapis.com/language/translate/v2?key=${apiKey}`, {
         "source": "en",
         "target": target,
@@ -33,7 +31,10 @@ const translate = (target = 'en') => {
     })
     .then(response=> {
       return response.data.data.translations[0].translatedText;
-    })
+    }, 
+    (error => {
+        //HANDLE HTTP ERROR
+    }))
 }
 
 //EXPORT HELPER METHODS
